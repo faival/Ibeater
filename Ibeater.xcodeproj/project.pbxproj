@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC9FDA7D18BA1DD900CF4670 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDA7C18BA1DD900CF4670 /* Foundation.framework */; };
+		EC9FDA7F18BA1DD900CF4670 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDA7E18BA1DD900CF4670 /* CoreGraphics.framework */; };
+		EC9FDA8118BA1DD900CF4670 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDA8018BA1DD900CF4670 /* UIKit.framework */; };
+		EC9FDA8718BA1DD900CF4670 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC9FDA8518BA1DD900CF4670 /* InfoPlist.strings */; };
+		EC9FDA8918BA1DD900CF4670 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9FDA8818BA1DD900CF4670 /* main.m */; };
+		EC9FDA8D18BA1DD900CF4670 /* IBeaterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9FDA8C18BA1DD900CF4670 /* IBeaterAppDelegate.m */; };
+		EC9FDA9018BA1DD900CF4670 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9FDA8E18BA1DD900CF4670 /* Main_iPhone.storyboard */; };
+		EC9FDA9318BA1DD900CF4670 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9FDA9118BA1DD900CF4670 /* Main_iPad.storyboard */; };
+		EC9FDA9618BA1DD900CF4670 /* IBeaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9FDA9518BA1DD900CF4670 /* IBeaterViewController.m */; };
+		EC9FDA9818BA1DD900CF4670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9FDA9718BA1DD900CF4670 /* Images.xcassets */; };
+		EC9FDA9F18BA1DD900CF4670 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDA9E18BA1DD900CF4670 /* XCTest.framework */; };
+		EC9FDAA018BA1DD900CF4670 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDA7C18BA1DD900CF4670 /* Foundation.framework */; };
+		EC9FDAA118BA1DD900CF4670 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDA8018BA1DD900CF4670 /* UIKit.framework */; };
+		EC9FDAA918BA1DD900CF4670 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC9FDAA718BA1DD900CF4670 /* InfoPlist.strings */; };
+		EC9FDAAB18BA1DD900CF4670 /* IbeaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9FDAAA18BA1DD900CF4670 /* IbeaterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC9FDAA218BA1DD900CF4670 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9FDA7118BA1DD900CF4670 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9FDA7818BA1DD900CF4670;
+			remoteInfo = Ibeater;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC9FDA7918BA1DD900CF4670 /* Ibeater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ibeater.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9FDA7C18BA1DD900CF4670 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC9FDA7E18BA1DD900CF4670 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EC9FDA8018BA1DD900CF4670 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EC9FDA8418BA1DD900CF4670 /* Ibeater-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ibeater-Info.plist"; sourceTree = "<group>"; };
+		EC9FDA8618BA1DD900CF4670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC9FDA8818BA1DD900CF4670 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC9FDA8A18BA1DD900CF4670 /* Ibeater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ibeater-Prefix.pch"; sourceTree = "<group>"; };
+		EC9FDA8B18BA1DD900CF4670 /* IBeaterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBeaterAppDelegate.h; sourceTree = "<group>"; };
+		EC9FDA8C18BA1DD900CF4670 /* IBeaterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBeaterAppDelegate.m; sourceTree = "<group>"; };
+		EC9FDA8F18BA1DD900CF4670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		EC9FDA9218BA1DD900CF4670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		EC9FDA9418BA1DD900CF4670 /* IBeaterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBeaterViewController.h; sourceTree = "<group>"; };
+		EC9FDA9518BA1DD900CF4670 /* IBeaterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBeaterViewController.m; sourceTree = "<group>"; };
+		EC9FDA9718BA1DD900CF4670 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC9FDA9D18BA1DD900CF4670 /* IbeaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IbeaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9FDA9E18BA1DD900CF4670 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EC9FDAA618BA1DD900CF4670 /* IbeaterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IbeaterTests-Info.plist"; sourceTree = "<group>"; };
+		EC9FDAA818BA1DD900CF4670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC9FDAAA18BA1DD900CF4670 /* IbeaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IbeaterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC9FDA7618BA1DD900CF4670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9FDA7F18BA1DD900CF4670 /* CoreGraphics.framework in Frameworks */,
+				EC9FDA8118BA1DD900CF4670 /* UIKit.framework in Frameworks */,
+				EC9FDA7D18BA1DD900CF4670 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9FDA9A18BA1DD900CF4670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9FDA9F18BA1DD900CF4670 /* XCTest.framework in Frameworks */,
+				EC9FDAA118BA1DD900CF4670 /* UIKit.framework in Frameworks */,
+				EC9FDAA018BA1DD900CF4670 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC9FDA7018BA1DD900CF4670 = {
+			isa = PBXGroup;
+			children = (
+				EC9FDA8218BA1DD900CF4670 /* Ibeater */,
+				EC9FDAA418BA1DD900CF4670 /* IbeaterTests */,
+				EC9FDA7B18BA1DD900CF4670 /* Frameworks */,
+				EC9FDA7A18BA1DD900CF4670 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC9FDA7A18BA1DD900CF4670 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FDA7918BA1DD900CF4670 /* Ibeater.app */,
+				EC9FDA9D18BA1DD900CF4670 /* IbeaterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC9FDA7B18BA1DD900CF4670 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FDA7C18BA1DD900CF4670 /* Foundation.framework */,
+				EC9FDA7E18BA1DD900CF4670 /* CoreGraphics.framework */,
+				EC9FDA8018BA1DD900CF4670 /* UIKit.framework */,
+				EC9FDA9E18BA1DD900CF4670 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC9FDA8218BA1DD900CF4670 /* Ibeater */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FDA8B18BA1DD900CF4670 /* IBeaterAppDelegate.h */,
+				EC9FDA8C18BA1DD900CF4670 /* IBeaterAppDelegate.m */,
+				EC9FDA8E18BA1DD900CF4670 /* Main_iPhone.storyboard */,
+				EC9FDA9118BA1DD900CF4670 /* Main_iPad.storyboard */,
+				EC9FDA9418BA1DD900CF4670 /* IBeaterViewController.h */,
+				EC9FDA9518BA1DD900CF4670 /* IBeaterViewController.m */,
+				EC9FDA9718BA1DD900CF4670 /* Images.xcassets */,
+				EC9FDA8318BA1DD900CF4670 /* Supporting Files */,
+			);
+			path = Ibeater;
+			sourceTree = "<group>";
+		};
+		EC9FDA8318BA1DD900CF4670 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FDA8418BA1DD900CF4670 /* Ibeater-Info.plist */,
+				EC9FDA8518BA1DD900CF4670 /* InfoPlist.strings */,
+				EC9FDA8818BA1DD900CF4670 /* main.m */,
+				EC9FDA8A18BA1DD900CF4670 /* Ibeater-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC9FDAA418BA1DD900CF4670 /* IbeaterTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FDAAA18BA1DD900CF4670 /* IbeaterTests.m */,
+				EC9FDAA518BA1DD900CF4670 /* Supporting Files */,
+			);
+			path = IbeaterTests;
+			sourceTree = "<group>";
+		};
+		EC9FDAA518BA1DD900CF4670 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FDAA618BA1DD900CF4670 /* IbeaterTests-Info.plist */,
+				EC9FDAA718BA1DD900CF4670 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC9FDA7818BA1DD900CF4670 /* Ibeater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9FDAAE18BA1DD900CF4670 /* Build configuration list for PBXNativeTarget "Ibeater" */;
+			buildPhases = (
+				EC9FDA7518BA1DD900CF4670 /* Sources */,
+				EC9FDA7618BA1DD900CF4670 /* Frameworks */,
+				EC9FDA7718BA1DD900CF4670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ibeater;
+			productName = Ibeater;
+			productReference = EC9FDA7918BA1DD900CF4670 /* Ibeater.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC9FDA9C18BA1DD900CF4670 /* IbeaterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9FDAB118BA1DD900CF4670 /* Build configuration list for PBXNativeTarget "IbeaterTests" */;
+			buildPhases = (
+				EC9FDA9918BA1DD900CF4670 /* Sources */,
+				EC9FDA9A18BA1DD900CF4670 /* Frameworks */,
+				EC9FDA9B18BA1DD900CF4670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9FDAA318BA1DD900CF4670 /* PBXTargetDependency */,
+			);
+			name = IbeaterTests;
+			productName = IbeaterTests;
+			productReference = EC9FDA9D18BA1DD900CF4670 /* IbeaterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC9FDA7118BA1DD900CF4670 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IBeater;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = studios.faival.music;
+				TargetAttributes = {
+					EC9FDA9C18BA1DD900CF4670 = {
+						TestTargetID = EC9FDA7818BA1DD900CF4670;
+					};
+				};
+			};
+			buildConfigurationList = EC9FDA7418BA1DD900CF4670 /* Build configuration list for PBXProject "Ibeater" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC9FDA7018BA1DD900CF4670;
+			productRefGroup = EC9FDA7A18BA1DD900CF4670 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC9FDA7818BA1DD900CF4670 /* Ibeater */,
+				EC9FDA9C18BA1DD900CF4670 /* IbeaterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC9FDA7718BA1DD900CF4670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9FDA9318BA1DD900CF4670 /* Main_iPad.storyboard in Resources */,
+				EC9FDA9818BA1DD900CF4670 /* Images.xcassets in Resources */,
+				EC9FDA9018BA1DD900CF4670 /* Main_iPhone.storyboard in Resources */,
+				EC9FDA8718BA1DD900CF4670 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9FDA9B18BA1DD900CF4670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9FDAA918BA1DD900CF4670 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC9FDA7518BA1DD900CF4670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9FDA8918BA1DD900CF4670 /* main.m in Sources */,
+				EC9FDA8D18BA1DD900CF4670 /* IBeaterAppDelegate.m in Sources */,
+				EC9FDA9618BA1DD900CF4670 /* IBeaterViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9FDA9918BA1DD900CF4670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9FDAAB18BA1DD900CF4670 /* IbeaterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC9FDAA318BA1DD900CF4670 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9FDA7818BA1DD900CF4670 /* Ibeater */;
+			targetProxy = EC9FDAA218BA1DD900CF4670 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC9FDA8518BA1DD900CF4670 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9FDA8618BA1DD900CF4670 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC9FDA8E18BA1DD900CF4670 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9FDA8F18BA1DD900CF4670 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		EC9FDA9118BA1DD900CF4670 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9FDA9218BA1DD900CF4670 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		EC9FDAA718BA1DD900CF4670 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9FDAA818BA1DD900CF4670 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC9FDAAC18BA1DD900CF4670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC9FDAAD18BA1DD900CF4670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC9FDAAF18BA1DD900CF4670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ibeater/Ibeater-Prefix.pch";
+				INFOPLIST_FILE = "Ibeater/Ibeater-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC9FDAB018BA1DD900CF4670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ibeater/Ibeater-Prefix.pch";
+				INFOPLIST_FILE = "Ibeater/Ibeater-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EC9FDAB218BA1DD900CF4670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ibeater.app/Ibeater";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ibeater/Ibeater-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IbeaterTests/IbeaterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EC9FDAB318BA1DD900CF4670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ibeater.app/Ibeater";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ibeater/Ibeater-Prefix.pch";
+				INFOPLIST_FILE = "IbeaterTests/IbeaterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC9FDA7418BA1DD900CF4670 /* Build configuration list for PBXProject "Ibeater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9FDAAC18BA1DD900CF4670 /* Debug */,
+				EC9FDAAD18BA1DD900CF4670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9FDAAE18BA1DD900CF4670 /* Build configuration list for PBXNativeTarget "Ibeater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9FDAAF18BA1DD900CF4670 /* Debug */,
+				EC9FDAB018BA1DD900CF4670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC9FDAB118BA1DD900CF4670 /* Build configuration list for PBXNativeTarget "IbeaterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9FDAB218BA1DD900CF4670 /* Debug */,
+				EC9FDAB318BA1DD900CF4670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC9FDA7118BA1DD900CF4670 /* Project object */;
+}
