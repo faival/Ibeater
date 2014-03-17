@@ -7,8 +7,25 @@
 //
 
 #import "IBeaterAppDelegate.h"
+#import "SCUI.h"
 
 @implementation IBeaterAppDelegate
++ (void) initialize
+{
+    [SCSoundCloud setClientID:@"8016158d4c1181ea89257930d14f045b"
+                       secret:@"f486b73543c1b51497a8779ce33a8664"
+                  redirectURL:[NSURL URLWithString:@"sampleproject://oauth"]];
+}
+/*
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    if(!url) return NO;
+ 
+    NSLog(@"login redirected: %@", url);
+ 
+    return YES;
+}
+*/
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
