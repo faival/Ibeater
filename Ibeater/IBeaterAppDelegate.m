@@ -11,6 +11,7 @@
 @implementation IBeaterAppDelegate
 + (void) initialize
 {
+
 }
 /*
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
