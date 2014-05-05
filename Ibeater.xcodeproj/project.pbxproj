@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC27097D18D3D09800E6AC0F /* libJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC27096118D3D04C00E6AC0F /* libJSONKit.a */; };
-		EC27097E18D3D09800E6AC0F /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC27096C18D3D05C00E6AC0F /* libOAuth2Client.a */; };
-		EC27097F18D3D09800E6AC0F /* libOHAttributedLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC27097218D3D06D00E6AC0F /* libOHAttributedLabel.a */; };
-		EC27098018D3D09800E6AC0F /* libSoundCloudAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC27094818D3D01100E6AC0F /* libSoundCloudAPI.a */; };
-		EC27098118D3D09800E6AC0F /* libSoundCloudUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC27094F18D3D02300E6AC0F /* libSoundCloudUI.a */; };
-		EC27098318D3D13500E6AC0F /* SoundCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC27098218D3D13500E6AC0F /* SoundCloud.bundle */; };
+		EC15FF0018DDA199002DE079 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC15FEFF18DDA199002DE079 /* OpenAL.framework */; };
 		EC2709A418D722A600E6AC0F /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = EC27099318D722A600E6AC0F /* base64.c */; };
 		EC2709A518D722A600E6AC0F /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC27099618D722A600E6AC0F /* NSData+SRB64Additions.m */; };
 		EC2709A618D722A600E6AC0F /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = EC27099818D722A600E6AC0F /* SocketIO.m */; };
@@ -46,107 +41,13 @@
 		EC9FDAF918BA1F5100CF4670 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDAF218BA1F5100CF4670 /* QuartzCore.framework */; };
 		EC9FDAFA18BA1F5100CF4670 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDAF318BA1F5100CF4670 /* Security.framework */; };
 		EC9FDB3D18BA2BAB00CF4670 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9FDB3C18BA2BAB00CF4670 /* libicucore.A.dylib */; };
+		ECC9C29B19179066001F0B22 /* MixerHostAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC9C29A19179066001F0B22 /* MixerHostAudio.m */; };
+		ECF95B4418DF170D00B32C92 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF95B4318DF170D00B32C92 /* CFNetwork.framework */; };
+		ECF95B4618DF175A00B32C92 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF95B4518DF175A00B32C92 /* AudioToolbox.framework */; };
+		ECFD290D18EB404C00D8A7E9 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD290C18EB404C00D8A7E9 /* AudioStreamer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EC27094518D3D01100E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27094018D3D01100E6AC0F /* SoundCloudAPI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 94535F86123FAFDF00BD668A;
-			remoteInfo = SoundCloudAPI.framework;
-		};
-		EC27094718D3D01100E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27094018D3D01100E6AC0F /* SoundCloudAPI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = SoundCloudAPI;
-		};
-		EC27094E18D3D02300E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27094918D3D02300E6AC0F /* SoundCloudUI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F6EF8C6113F929D700B20B40;
-			remoteInfo = libSoundCloudUI;
-		};
-		EC27095018D3D02300E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27094918D3D02300E6AC0F /* SoundCloudUI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F62E0CE5148FB27100BE8F14;
-			remoteInfo = SoundCloudUI.framework;
-		};
-		EC27096018D3D04C00E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27095B18D3D04C00E6AC0F /* JSONKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F6803523148F6D22008A51BA;
-			remoteInfo = libJSONKit;
-		};
-		EC27096218D3D04C00E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27095B18D3D04C00E6AC0F /* JSONKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F6AE0202148F825C0004909F;
-			remoteInfo = JSONKit.framework;
-		};
-		EC27096918D3D05C00E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27096418D3D05C00E6AC0F /* OAuth2Client.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 942FFCD612315E0A00E6C65E;
-			remoteInfo = OAuth2Client.framework;
-		};
-		EC27096B18D3D05C00E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27096418D3D05C00E6AC0F /* OAuth2Client.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = OAuth2Client;
-		};
-		EC27097118D3D06D00E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27096D18D3D06D00E6AC0F /* OHAttributedLabel.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F62728FA148F70DF00314599;
-			remoteInfo = OHAttributedLabel;
-		};
-		EC27097318D3D08000E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27096D18D3D06D00E6AC0F /* OHAttributedLabel.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F62728F9148F70DF00314599;
-			remoteInfo = OHAttributedLabel;
-		};
-		EC27097518D3D08000E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27096418D3D05C00E6AC0F /* OAuth2Client.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = OAuth2Client;
-		};
-		EC27097718D3D08000E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27095B18D3D04C00E6AC0F /* JSONKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F6803522148F6D22008A51BA;
-			remoteInfo = libJSONKit;
-		};
-		EC27097918D3D08000E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27094918D3D02300E6AC0F /* SoundCloudUI.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F6EF8C6013F929D700B20B40;
-			remoteInfo = libSoundCloudUI;
-		};
-		EC27097B18D3D08000E6AC0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC27094018D3D01100E6AC0F /* SoundCloudAPI.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = SoundCloudAPI;
-		};
 		EC9FDAA218BA1DD900CF4670 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC9FDA7118BA1DD900CF4670 /* Project object */;
@@ -157,12 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC27094018D3D01100E6AC0F /* SoundCloudAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudAPI.xcodeproj; path = CocoaSoundCloudAPI/SoundCloudAPI.xcodeproj; sourceTree = "<group>"; };
-		EC27094918D3D02300E6AC0F /* SoundCloudUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudUI.xcodeproj; path = CocoaSoundCloudUI/SoundCloudUI.xcodeproj; sourceTree = "<group>"; };
-		EC27095B18D3D04C00E6AC0F /* JSONKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSONKit.xcodeproj; path = JSONKit/JSONKit.xcodeproj; sourceTree = "<group>"; };
-		EC27096418D3D05C00E6AC0F /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
-		EC27096D18D3D06D00E6AC0F /* OHAttributedLabel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OHAttributedLabel.xcodeproj; path = OHAttributedLabel/OHAttributedLabel.xcodeproj; sourceTree = "<group>"; };
-		EC27098218D3D13500E6AC0F /* SoundCloud.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SoundCloud.bundle; path = CocoaSoundCloudUI/SoundCloud.bundle; sourceTree = "<group>"; };
+		EC15FEFF18DDA199002DE079 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		EC27099318D722A600E6AC0F /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
 		EC27099418D722A600E6AC0F /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
 		EC27099518D722A600E6AC0F /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
@@ -212,6 +108,12 @@
 		EC9FDAF218BA1F5100CF4670 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EC9FDAF318BA1F5100CF4670 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EC9FDB3C18BA2BAB00CF4670 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = usr/lib/libicucore.A.dylib; sourceTree = SDKROOT; };
+		ECC9C29919179066001F0B22 /* MixerHostAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MixerHostAudio.h; path = ../MixerHost/Classes/MixerHostAudio.h; sourceTree = "<group>"; };
+		ECC9C29A19179066001F0B22 /* MixerHostAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MixerHostAudio.m; path = ../MixerHost/Classes/MixerHostAudio.m; sourceTree = "<group>"; };
+		ECF95B4318DF170D00B32C92 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ECF95B4518DF175A00B32C92 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		ECFD290B18EB404C00D8A7E9 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioStreamer.h; path = ../AudioStreamer/Classes/AudioStreamer.h; sourceTree = "<group>"; };
+		ECFD290C18EB404C00D8A7E9 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioStreamer.m; path = ../AudioStreamer/Classes/AudioStreamer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,11 +121,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC27097D18D3D09800E6AC0F /* libJSONKit.a in Frameworks */,
-				EC27097E18D3D09800E6AC0F /* libOAuth2Client.a in Frameworks */,
-				EC27097F18D3D09800E6AC0F /* libOHAttributedLabel.a in Frameworks */,
-				EC27098018D3D09800E6AC0F /* libSoundCloudAPI.a in Frameworks */,
-				EC27098118D3D09800E6AC0F /* libSoundCloudUI.a in Frameworks */,
+				ECF95B4618DF175A00B32C92 /* AudioToolbox.framework in Frameworks */,
+				ECF95B4418DF170D00B32C92 /* CFNetwork.framework in Frameworks */,
+				EC15FF0018DDA199002DE079 /* OpenAL.framework in Frameworks */,
 				EC9FDB3D18BA2BAB00CF4670 /* libicucore.A.dylib in Frameworks */,
 				EC9FDAF418BA1F5100CF4670 /* AddressBook.framework in Frameworks */,
 				EC9FDAF518BA1F5100CF4670 /* AddressBookUI.framework in Frameworks */,
@@ -251,62 +151,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC27093F18D3CFF200E6AC0F /* SoundCloud */ = {
-			isa = PBXGroup;
-			children = (
-				EC27096D18D3D06D00E6AC0F /* OHAttributedLabel.xcodeproj */,
-				EC27096418D3D05C00E6AC0F /* OAuth2Client.xcodeproj */,
-				EC27095B18D3D04C00E6AC0F /* JSONKit.xcodeproj */,
-				EC27094918D3D02300E6AC0F /* SoundCloudUI.xcodeproj */,
-				EC27094018D3D01100E6AC0F /* SoundCloudAPI.xcodeproj */,
-			);
-			name = SoundCloud;
-			sourceTree = "<group>";
-		};
-		EC27094118D3D01100E6AC0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC27094618D3D01100E6AC0F /* SoundCloudAPI.framework */,
-				EC27094818D3D01100E6AC0F /* libSoundCloudAPI.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EC27094A18D3D02300E6AC0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC27094F18D3D02300E6AC0F /* libSoundCloudUI.a */,
-				EC27095118D3D02300E6AC0F /* SoundCloudUI.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EC27095C18D3D04C00E6AC0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC27096118D3D04C00E6AC0F /* libJSONKit.a */,
-				EC27096318D3D04C00E6AC0F /* JSONKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EC27096518D3D05C00E6AC0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC27096A18D3D05C00E6AC0F /* OAuth2Client.framework */,
-				EC27096C18D3D05C00E6AC0F /* libOAuth2Client.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EC27096E18D3D06D00E6AC0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC27097218D3D06D00E6AC0F /* libOHAttributedLabel.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		EC27099218D722A600E6AC0F /* SocketIO */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,9 +178,8 @@
 		EC9FDA7018BA1DD900CF4670 = {
 			isa = PBXGroup;
 			children = (
+				ECF95B4718E22CCA00B32C92 /* AFStreamer */,
 				EC27099218D722A600E6AC0F /* SocketIO */,
-				EC27098218D3D13500E6AC0F /* SoundCloud.bundle */,
-				EC27093F18D3CFF200E6AC0F /* SoundCloud */,
 				EC9FDA8218BA1DD900CF4670 /* Ibeater */,
 				EC9FDAA418BA1DD900CF4670 /* IbeaterTests */,
 				EC9FDA7B18BA1DD900CF4670 /* Frameworks */,
@@ -356,6 +199,9 @@
 		EC9FDA7B18BA1DD900CF4670 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECF95B4518DF175A00B32C92 /* AudioToolbox.framework */,
+				ECF95B4318DF170D00B32C92 /* CFNetwork.framework */,
+				EC15FEFF18DDA199002DE079 /* OpenAL.framework */,
 				EC9FDB3C18BA2BAB00CF4670 /* libicucore.A.dylib */,
 				EC9FDAED18BA1F5100CF4670 /* AddressBook.framework */,
 				EC9FDAEE18BA1F5100CF4670 /* AddressBookUI.framework */,
@@ -420,6 +266,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ECF95B4718E22CCA00B32C92 /* AFStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				ECC9C29919179066001F0B22 /* MixerHostAudio.h */,
+				ECC9C29A19179066001F0B22 /* MixerHostAudio.m */,
+				ECFD290B18EB404C00D8A7E9 /* AudioStreamer.h */,
+				ECFD290C18EB404C00D8A7E9 /* AudioStreamer.m */,
+			);
+			name = AFStreamer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,11 +291,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				EC27097418D3D08000E6AC0F /* PBXTargetDependency */,
-				EC27097618D3D08000E6AC0F /* PBXTargetDependency */,
-				EC27097818D3D08000E6AC0F /* PBXTargetDependency */,
-				EC27097A18D3D08000E6AC0F /* PBXTargetDependency */,
-				EC27097C18D3D08000E6AC0F /* PBXTargetDependency */,
 			);
 			name = Ibeater;
 			productName = Ibeater;
@@ -489,28 +341,6 @@
 			mainGroup = EC9FDA7018BA1DD900CF4670;
 			productRefGroup = EC9FDA7A18BA1DD900CF4670 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = EC27095C18D3D04C00E6AC0F /* Products */;
-					ProjectRef = EC27095B18D3D04C00E6AC0F /* JSONKit.xcodeproj */;
-				},
-				{
-					ProductGroup = EC27096518D3D05C00E6AC0F /* Products */;
-					ProjectRef = EC27096418D3D05C00E6AC0F /* OAuth2Client.xcodeproj */;
-				},
-				{
-					ProductGroup = EC27096E18D3D06D00E6AC0F /* Products */;
-					ProjectRef = EC27096D18D3D06D00E6AC0F /* OHAttributedLabel.xcodeproj */;
-				},
-				{
-					ProductGroup = EC27094118D3D01100E6AC0F /* Products */;
-					ProjectRef = EC27094018D3D01100E6AC0F /* SoundCloudAPI.xcodeproj */;
-				},
-				{
-					ProductGroup = EC27094A18D3D02300E6AC0F /* Products */;
-					ProjectRef = EC27094918D3D02300E6AC0F /* SoundCloudUI.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				EC9FDA7818BA1DD900CF4670 /* Ibeater */,
@@ -518,72 +348,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		EC27094618D3D01100E6AC0F /* SoundCloudAPI.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SoundCloudAPI.framework;
-			remoteRef = EC27094518D3D01100E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27094818D3D01100E6AC0F /* libSoundCloudAPI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSoundCloudAPI.a;
-			remoteRef = EC27094718D3D01100E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27094F18D3D02300E6AC0F /* libSoundCloudUI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSoundCloudUI.a;
-			remoteRef = EC27094E18D3D02300E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27095118D3D02300E6AC0F /* SoundCloudUI.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SoundCloudUI.framework;
-			remoteRef = EC27095018D3D02300E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27096118D3D04C00E6AC0F /* libJSONKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libJSONKit.a;
-			remoteRef = EC27096018D3D04C00E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27096318D3D04C00E6AC0F /* JSONKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = JSONKit.framework;
-			remoteRef = EC27096218D3D04C00E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27096A18D3D05C00E6AC0F /* OAuth2Client.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuth2Client.framework;
-			remoteRef = EC27096918D3D05C00E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27096C18D3D05C00E6AC0F /* libOAuth2Client.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOAuth2Client.a;
-			remoteRef = EC27096B18D3D05C00E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EC27097218D3D06D00E6AC0F /* libOHAttributedLabel.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOHAttributedLabel.a;
-			remoteRef = EC27097118D3D06D00E6AC0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EC9FDA7718BA1DD900CF4670 /* Resources */ = {
@@ -594,7 +358,6 @@
 				EC9FDA9818BA1DD900CF4670 /* Images.xcassets in Resources */,
 				EC9FDA9018BA1DD900CF4670 /* Main_iPhone.storyboard in Resources */,
 				EC9FDA8718BA1DD900CF4670 /* InfoPlist.strings in Resources */,
-				EC27098318D3D13500E6AC0F /* SoundCloud.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +379,7 @@
 				EC9FDA8918BA1DD900CF4670 /* main.m in Sources */,
 				EC2709A518D722A600E6AC0F /* NSData+SRB64Additions.m in Sources */,
 				EC2709A818D722A600E6AC0F /* SocketIOPacket.m in Sources */,
+				ECC9C29B19179066001F0B22 /* MixerHostAudio.m in Sources */,
 				EC9FDA8D18BA1DD900CF4670 /* IBeaterAppDelegate.m in Sources */,
 				EC2709AA18D722A600E6AC0F /* SocketIOTransportXHR.m in Sources */,
 				EC9FDA9618BA1DD900CF4670 /* IBeaterViewController.m in Sources */,
@@ -626,6 +390,7 @@
 				EC67686518C665A70057BB30 /* MixPlayer.m in Sources */,
 				EC2709AB18D722A600E6AC0F /* SRWebSocket.m in Sources */,
 				EC2709A718D722A600E6AC0F /* SocketIOJSONSerialization.m in Sources */,
+				ECFD290D18EB404C00D8A7E9 /* AudioStreamer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,31 +405,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EC27097418D3D08000E6AC0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OHAttributedLabel;
-			targetProxy = EC27097318D3D08000E6AC0F /* PBXContainerItemProxy */;
-		};
-		EC27097618D3D08000E6AC0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OAuth2Client;
-			targetProxy = EC27097518D3D08000E6AC0F /* PBXContainerItemProxy */;
-		};
-		EC27097818D3D08000E6AC0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libJSONKit;
-			targetProxy = EC27097718D3D08000E6AC0F /* PBXContainerItemProxy */;
-		};
-		EC27097A18D3D08000E6AC0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libSoundCloudUI;
-			targetProxy = EC27097918D3D08000E6AC0F /* PBXContainerItemProxy */;
-		};
-		EC27097C18D3D08000E6AC0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SoundCloudAPI;
-			targetProxy = EC27097B18D3D08000E6AC0F /* PBXContainerItemProxy */;
-		};
 		EC9FDAA318BA1DD900CF4670 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC9FDA7818BA1DD900CF4670 /* Ibeater */;
@@ -799,6 +539,8 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"-framework",
+					OpenAL,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -822,6 +564,8 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"-framework",
+					OpenAL,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

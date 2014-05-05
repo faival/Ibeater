@@ -8,14 +8,16 @@
 #import "WeMixBrain.h"
 #import "IBeaterViewController.h"
 #import "SocketIOPacket.h"
-#import "SCUI.h"
 
 @interface IBeaterViewController ()
 
 @property (nonatomic) BOOL userIsplaying;
 @property (nonatomic) BOOL userIsLooping;
 @property (nonatomic, strong) WeMixBrain *weMixBrain;
-
+@property (nonatomic, strong) NSMutableArray *buttons1;
+@property (nonatomic, strong) NSMutableArray *labels1;
+@property (nonatomic, strong) IBOutlet UILabel *currentLabel;
+@property (nonatomic, strong) IBOutlet UIButton *currentButton;
 
 @end
 
@@ -25,24 +27,30 @@
 @synthesize weMixBrain = _weMixBrain;
 @synthesize trackAVolume = _trackAVolume;
 @synthesize trackBVolume = _trackBVolume;
+@synthesize tempoControl = _tempoControl;
 @synthesize crossfade = _crossfade;
+@synthesize buttons1 = _buttons1;
+@synthesize currentButton = _currentButton;
+@synthesize currentLabel = _currentLabel;
 
-@synthesize beatButton0 = _beatButton0;
-@synthesize beatButton1 = _beatButton1;
-@synthesize beatButton2 = _beatButton2;
-@synthesize beatButton3 = _beatButton3;
-@synthesize beatButton4 = _beatButton4;
-@synthesize beatButton5 = _beatButton5;
-@synthesize beatButton6 = _beatButton6;
-@synthesize beatButton7 = _beatButton7;
+//@synthesize labels1 = _labels1;
 
--(UIButton *) beatButton0
+/*
+-(NSMutableArray *)buttons1
 {
-    if (!_beatButton0)
-        _beatButton0 = [[UIButton alloc] init];
-    return _beatButton0;
+    if (!_buttons1){
+        _buttons1 = [[NSMutableArray alloc] init];
+    }
+    return _buttons1;
 }
-
+-(NSMutableArray *)labels1
+{
+    if (!_labels1){
+        _labels1 = [[NSMutableArray alloc] init];
+    }
+    return _labels1;
+}
+*/
 
 -(WeMixBrain *)weMixBrain
 {
@@ -86,13 +94,9 @@
     CGAffineTransform trans = CGAffineTransformMakeRotation(-M_PI_2);
     self.trackAVolume.transform = trans;
     self.trackBVolume.transform = trans;
-    
     _socketIO = [[SocketIO alloc] initWithDelegate:self];
     [_socketIO connectToHost:@"localhost" onPort:3000];
-    
-    
-   
-    
+
     NSMutableDictionary *joinData = [NSMutableDictionary dictionary];
     [joinData setObject:@"pabla" forKey:@"pName"];
     [joinData setObject:@"delahabla" forKey:@"pRoom"];
@@ -129,25 +133,20 @@
     NSLog(@">>>>> action: %@", action);
     
     if ([@"joinData" isEqual: action]) {
-       
-        
-        
-        
-        
-        
-        
-        
-        
         NSLog(@">>> gettingSongsKeys:");
         NSDictionary *playlist = (NSDictionary *)[[data valueForKey:@"tracks"] firstObject];
         
         if(playlist != nil) {
             NSLog(@"gettingPlaylist >>> song: %@", playlist);
             [self.weMixBrain addSongsDB:playlist];
+            [self computeTrackVolumes: self.crossfade.value];
         }
-
     }
-   
+}
+
+- (IBAction)beatButtonClickedForTrack1:(UIButton*) beatButton
+{
+    
 }
 
 
@@ -158,15 +157,12 @@
     NSString *playCommand = [defaultPlay stringByAppendingString:@"><"];
     NSString *pauseComand = [defaultPause stringByAppendingString:@"><"];
     NSString *newText;
-
     NSString *command = [sender titleForState:UIControlStateNormal];
-
-
     NSString *buttonId = [NSString stringWithFormat:@"%ld", (long)[sender tag]];
+    
     if ([command isEqualToString:defaultPlay]) {
         newText= [ playCommand stringByAppendingString:buttonId];
         [sender setTitle:defaultPause forState:UIControlStateNormal];
-
     } else {
         newText= [ pauseComand stringByAppendingString:buttonId];
         [sender setTitle:defaultPlay forState:UIControlStateNormal];
@@ -181,20 +177,17 @@
     NSString *loopCommand = [defaultLoop stringByAppendingString:@"><"];
     NSString *unloopCommand = [defaultUnloop stringByAppendingString:@"><"];
     NSString *newText;
-
     NSString *command = [sender titleForState:UIControlStateNormal];
-    
     NSString *buttonId = [NSString stringWithFormat:@"%ld", (long)[sender tag]];
     
     if ([command isEqualToString:defaultLoop]) {
         newText= [loopCommand stringByAppendingString: buttonId];
         [sender setTitle:defaultUnloop forState:UIControlStateNormal];
-
     } else {
         newText= [ unloopCommand stringByAppendingString: buttonId];
         [sender setTitle:defaultLoop forState:UIControlStateNormal];
     }
-    
+
     [self.weMixBrain performCommand: newText];
 
 }
@@ -203,52 +196,83 @@
 -(void) computeTrackVolumes:(float)crossfadeValue
 {
     
+    // apply crossFade logarithmic scale to the gain on both tracks
     float log0 = log(crossfadeValue)/10;
     float log1 = log(1- crossfadeValue)/10;
     float targetVolume0 = [self.trackAVolume value] + log1;
     float targetVolume1 = [self.trackBVolume value] + log0;
+    
     if (targetVolume0 < 0 || targetVolume0 == NAN) {
         targetVolume0 = 0;
     }
     if (targetVolume1 < 0 || targetVolume1 == NAN) {
         targetVolume1 = 0;
     }
-    NSLog(@"volume0 : %f", targetVolume0);
-    NSLog(@"volume1 : %f", targetVolume1);
     
     [self.weMixBrain volumeTrack0:targetVolume0];
     [self.weMixBrain volumeTrack1:targetVolume1];
 
 }
 
-- (IBAction)sliderValueChanged:(UISlider *)sender {
-    NSLog(@"slider value = %f", sender.value);
+- (IBAction)sliderValueChanged:(UISlider *)sender
+{
     [self computeTrackVolumes: self.crossfade.value];
 }
 
+- (IBAction)tempoControlChanged:(UISlider *)sender
+{
+    [self.weMixBrain setMasterTempo: sender.value];
+}
 
--(void) updateBeatArrayUI:(NSArray *) beatClasses
+-(void) updateBeatArrayUI:(NSMutableArray *) beatClasses
 {
     
-    NSLog(@"setting labels for");
-    
-    [self.beatButton0 setTitle:[beatClasses objectAtIndex:0] forState: UIControlStateNormal];
-    [self.beatButton1 setTitle:[beatClasses objectAtIndex:1] forState: UIControlStateNormal];
-    
-    NSString *beatClass = @"!";
     int beatIndex = 0;
-    for (beatClass in beatClasses) {
-        NSString *key = [NSString stringWithFormat:@"beatButton%d", beatIndex];
-
-        NSLog(@"betting self button for %@",key);
-        
-        UIButton *button =  (UIButton *)[self valueForKey:key];
-
-        NSLog(@"setting label for %@", beatClass);
-        NSLog(@"setting label for button %@", [button titleForState:UIControlStateNormal]);
-        [button setTitle:beatClass forState: UIControlStateNormal];
+    while (beatIndex < 8) {
+        NSLog(@"getting label for %d", beatIndex);
+        self.currentLabel = [self.labels1 objectAtIndex:beatIndex];
+        NSLog(@"getting beatClass for label %@", [self.currentLabel text]);
+        NSString *beatClass = (NSString *)[beatClasses objectAtIndex:beatIndex];
+        NSLog(@"setting label for button %@", beatClass);
+        [self.currentLabel setText: beatClass];
         beatIndex++;
     }
 }
 
+/*
+- (void)addButtonsToView
+{
+    
+    if (!self.buttons1)
+        self.buttons1 = [[NSMutableArray alloc] init];
+    
+    
+    NSArray *buttons = @[@{@"Tag":@100,@"Title":@"red",@"Color":[UIColor redColor]},
+                         @{@"Tag":@200,@"Title":@"blue",@"Color":[UIColor blueColor]},
+                         @{@"Tag":@300,@"Title":@"green",@"Color":[UIColor greenColor]}];
+    
+    CGRect frame = CGRectMake(0.0f, 0.0f, 50.0f, 30.0f);
+    for (NSDictionary *dict in buttons)
+    {
+        UIButton *button =[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        button.frame = frame;
+        button.tag = [dict[@"Tag"] integerValue];
+        [button setTitle:dict[@"Title"]
+                forState:UIControlStateNormal];
+        button.backgroundColor = dict[@"Color"];
+        [button setTitleColor:[UIColor blackColor]
+                     forState:UIControlStateNormal];
+        //[button addTarget:self action:@selector(buttonAction:)
+        //forControlEvents:UIControlEventTouchUpInside];
+
+        [self.view addSubview:button];
+        [self.buttons1 addObject: button];
+        NSLog(@"initialising button: %@", dict[@"Title"]);
+        frame.origin.x+=frame.size.width+20.0f;
+    }
+    
+    CGSize contentSize = self.view.frame.size;
+    contentSize.width = frame.origin.x;
+}
+*/
 @end

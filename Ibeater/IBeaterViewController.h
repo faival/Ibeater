@@ -20,17 +20,10 @@
 @property (weak, nonatomic) IBOutlet UISlider *trackBVolume;
 @property (weak, nonatomic) IBOutlet UISlider *crossfade;
 
-@property (weak, nonatomic) IBOutlet UIButton *beatButton0;
+@property (weak, nonatomic) IBOutlet UISlider *tempoControl;
 
-@property (weak, nonatomic) IBOutlet UIButton *beatButton1;
-@property (weak, nonatomic) IBOutlet UIButton *beatButton2;
-@property (weak, nonatomic) IBOutlet UIButton *beatButton3;
-@property (weak, nonatomic) IBOutlet UIButton *beatButton4;
-@property (weak, nonatomic) IBOutlet UIButton *beatButton5;
-@property (weak, nonatomic) IBOutlet UIButton *beatButton6;
-@property (weak, nonatomic) IBOutlet UIButton *beatButton7;
 
--(void) updateBeatArrayUI:(NSArray *) beatClasses;
+-(void) updateBeatArrayUI:(NSMutableArray *) beatClasses;
 
 
 @end

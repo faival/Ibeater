@@ -8,17 +8,23 @@
 
 #import "WeMixBrain.h"
 #import "MixPlayer.h"
+#import "IBeaterViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface WeMixBrain ()
 
 @property (nonatomic) int currentSong;
+@property (nonatomic) int tempoTickCounter;
+@property (nonatomic) float currentTempo;
+@property (nonatomic, strong) IBeaterViewController *mixUIController;
 @property (nonatomic, strong) MixPlayer *track0;
 @property (nonatomic, strong) MixPlayer *track1;
 @property (nonatomic, strong) MixPlayer *track2;
 @property (nonatomic) float volumeTrack0;
 @property (nonatomic) float volumeTrack1;
 @property (nonatomic, strong) NSDictionary *songsDB;
+@property (nonatomic, strong) NSMutableArray *songsNames;
+@property (nonatomic, strong) NSMutableArray *masterSongBeatStamps;
 @property (nonatomic, strong) NSNumber *songClickedPlayTStamp;
 
 @end
@@ -26,6 +32,8 @@
 
 @implementation WeMixBrain
 
+
+@synthesize mixUIController = _mixUIController;
 @synthesize songsDB = _songsDB;
 
 @synthesize track0 = _track0;
@@ -33,7 +41,31 @@
 @synthesize track2 = _track2;
 
 @synthesize songClickedPlayTStamp = _songClickedPlayTStamp;
+@synthesize tempoTickCounter = _tempoTickCounter;
 @synthesize currentSong = _currentSong;
+@synthesize currentTempo = _currentTempo;
+
+-(IBeaterViewController *)mixUIController
+{
+    if(!_mixUIController) _mixUIController = [[IBeaterViewController alloc] init];
+    return _mixUIController;
+}
+
+-(NSMutableArray *)songsNames
+{
+    if(!_songsNames) {
+        _songsNames = [[NSMutableArray alloc] init];
+    }
+    return _songsNames;
+}
+
+-(NSMutableArray *)masterSongBeatStamps
+{
+    if(!_masterSongBeatStamps) {
+        _masterSongBeatStamps = [[NSMutableArray alloc] init];
+    }
+    return _masterSongBeatStamps;
+}
 
 -(MixPlayer *)track0
 {
@@ -60,6 +92,7 @@
     return _songsDB;
 }
 
+
 -(NSNumber *)songClickedPlayTStamp
 {
     if(!_songClickedPlayTStamp) _songClickedPlayTStamp = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
@@ -78,14 +111,19 @@
     NSString *currentSong = nil;
     int numSongs = [songNames count];
     
-    for (int i = 0; i < numSongs && i < 2; i++) {
-        
+    for (int i = 0; i < 2; i++) {
         
         currentSong = [songNames objectAtIndex:i];
+        [self.songsNames addObject:currentSong];
 
-        nameArray = [currentSong componentsSeparatedByString:@"-"];
+        /*
+        nameArray = [currentSong componentsSeparatedByString:@"+$$%%$$+"];
         songParsed = [[[nameArray firstObject]stringByAppendingString:@"/"] stringByAppendingString:[nameArray lastObject]];
-        archiveOrgUrl = [@"https://www.archive.org/download/" stringByAppendingString:songParsed];
+        */
+        
+        archiveOrgUrl = [@"https://www.archive.org/download/" stringByAppendingString:currentSong];
+        
+        
         
         NSLog(@">>>> init player for: %@", archiveOrgUrl);
         newMixPlayer = [[MixPlayer alloc] init];
@@ -98,8 +136,7 @@
         
         NSLog(@">>>> song objects got for: %@", archiveOrgUrl);
         
-    
-        NSEnumerator *beats = [beatsInfo keyEnumerator];
+
         NSMutableArray *onsets = [[NSMutableArray alloc] init];
         NSMutableArray *beatClasses = [[NSMutableArray alloc] init];
                            
@@ -115,14 +152,18 @@
         while (beatIndex < beatsSize) {
             beatKey = [NSString stringWithFormat:@"%d", beatIndex];
             beatStamp = [[[beatsInfo objectForKey: beatKey] objectForKey:@"beatStamp"] doubleValue];
-            beatClass = [NSString stringWithFormat:@"%@",[[beatsInfo objectForKey: beatKey] objectForKey:@"class"]];
             [onsets addObject: [NSNumber numberWithDouble: beatStamp]];
+            
+            beatClass = [NSString stringWithFormat:@"%@",[[beatsInfo objectForKey: beatKey] objectForKey:@"beatDescriptor"]];
             [beatClasses addObject: beatClass];
             beatIndex++;
         }
+    
         
         [newMixPlayer setSongURL:archiveOrgUrl];
-        
+        float songBpm = [(NSNumber *)[songInfo objectForKey:@"bpm"] floatValue];
+        [newMixPlayer setOriginalRate:songBpm];
+        [newMixPlayer setRate:1];
         NSLog(@" setting song beat stamps: %@", onsets);
         [newMixPlayer setSongBeatStamps: onsets];
         [newMixPlayer setSongBeatClasses: beatClasses];
@@ -135,6 +176,7 @@
             self.track2 = newMixPlayer;
         }
     }
+
 }
 
 - (MixPlayer *) getMixPlayer: (int)mixNumber
@@ -162,7 +204,6 @@
     [self initialisePlayers];
 }
 
-
 -(NSMutableArray *) getSongNames
 {
     NSMutableArray *result = [[NSMutableArray alloc] init];
@@ -176,11 +217,6 @@
     return result;
 }
 
-
-
-
-
-
 - (void) performCommand:(NSString *)command
 {
     NSArray *commandParams = [command componentsSeparatedByString:@"><"];
@@ -188,17 +224,13 @@
     NSString *songIndexStr = [commandParams lastObject];
  
     int songIndex = [songIndexStr integerValue];
-    if (songIndex > 2)
+    if (songIndex >= [self.songsNames count])
         return;
     
     self.currentSong = songIndex;
     
-    
     MixPlayer *mixPlayer = [self getMixPlayer: self.currentSong];
-//    [[MixPlayer alloc] init];
-    //  mixPlayer = [self getMixPlayer: self.currentSong];
     
-
     if([@"play" isEqual: action]) {
         
         NSLog(@"play: %@", command);
@@ -233,7 +265,71 @@
     [self.track1 setVolume:self.volumeTrack1];
 }
 
+- (void) pushBeatClassesUIArray: (NSMutableArray *) currentClasses
+{
+    
+    NSLog(@"updating ui with classes: %lu", (unsigned long)[currentClasses count]);
+    [self.mixUIController updateBeatArrayUI: currentClasses];
+}
 
+- (void) updateTempoTickCounter
+{
+    self.tempoTickCounter++;
+    if (self.tempoTickCounter > 8) {
+        self.tempoTickCounter = 0;
+    }
+}
+
+
+- (void) updateCurrentMasterSongTick
+{
+    
+    NSLog(@"song: %d is ticking", self.currentSong);
+    //update global tempoTick
+    [self updateTempoTickCounter];
+}
+
+
+- (void) setMasterTempo: (float) tempo
+{
+
+
+    self.currentTempo = tempo;
+    NSLog(@"tempo set: %f", self.currentTempo);
+    
+    
+    NSDictionary *songDict  = [[NSDictionary alloc] init];
+    NSString *masterSong = (NSString *)[self.songsNames objectAtIndex:self.currentSong];
+
+    songDict = [[self.songsDB objectForKey:masterSong] objectForKey:@"songData"];
+    NSLog(@"songInfo: %@", songDict);
+    float masterTempo = [(NSNumber *)[songDict valueForKey:@"bpm"] floatValue];
+    float indexTempo = masterTempo;
+    
+
+    int index = 0;
+    MixPlayer *targetTrack = nil;
+    
+    NSLog(@"mastertempo %f", masterTempo);
+
+    //adjust rate of master track
+    targetTrack = [self getMixPlayer:self.currentSong];
+    [targetTrack setRate:self.currentTempo];
+    [targetTrack setMaster];
+    
+    //adjust rate based on masterTempo on all other players
+    NSString *songName = (NSString *)[self.songsNames firstObject];
+    while (index < [self.songsNames count]) {
+        if (index != self.currentSong) {
+            songDict = [[self.songsDB objectForKey:[self.songsNames objectAtIndex:index]] objectForKey:@"songData"];
+            indexTempo = [(NSNumber *)[songDict valueForKey:@"bpm"] floatValue];
+            targetTrack = (MixPlayer *)[self getMixPlayer:index];
+            [targetTrack setRate:self.currentTempo];
+            [targetTrack setSlave];
+        }
+        index++;
+    }
+}
 
 
 @end

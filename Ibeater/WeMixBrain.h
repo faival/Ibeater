@@ -10,15 +10,13 @@
 
 @interface WeMixBrain : NSObject
 
-
-
 - (void) addSongsDB: (NSDictionary *) songsDB;
 - (void) performCommand: (NSString *) command;
 
-- (void) crossfade: (float) crossfadeValue;
 - (void) volumeTrack0: (float) volumeValue;
 - (void) volumeTrack1: (float) volumeValue;
-
-
+- (void) setMasterTempo: (float) tempo;
+- (void) updateCurrentMasterSongTick;
+- (void) pushBeatClassesUIArray: (NSMutableArray *) currentClasses;
 
 @end
