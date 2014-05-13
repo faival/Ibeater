@@ -9,7 +9,10 @@
 #import "WeMixBrain.h"
 #import "MixPlayer.h"
 #import "IBeaterViewController.h"
+#import "MixerHostAudio.h"
 #import <AVFoundation/AVFoundation.h>
+
+NSString *MixerHostAudioObjectPlaybackStateDidChangeNotification = @"MixerHostAudioObjectPlaybackStateDidChangeNotification";
 
 @interface WeMixBrain ()
 
@@ -20,6 +23,7 @@
 @property (nonatomic, strong) MixPlayer *track0;
 @property (nonatomic, strong) MixPlayer *track1;
 @property (nonatomic, strong) MixPlayer *track2;
+@property (nonatomic, strong) MixerHostAudio *mixerHost;
 @property (nonatomic) float volumeTrack0;
 @property (nonatomic) float volumeTrack1;
 @property (nonatomic, strong) NSDictionary *songsDB;
@@ -35,6 +39,8 @@
 
 @synthesize mixUIController = _mixUIController;
 @synthesize songsDB = _songsDB;
+
+@synthesize mixerHost = _mixerHost;
 
 @synthesize track0 = _track0;
 @synthesize track1 = _track1;
@@ -100,6 +106,27 @@
     
 }
 
+- (void) registerForAudioObjectNotifications {
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector (handlePlaybackStateChanged:)
+                               name: MixerHostAudioObjectPlaybackStateDidChangeNotification
+                             object: self.mixerHost];
+}
+
+- (void) initializeMixerSettingsToUI {
+    
+    // Initialize mixer settings to UI
+    [self.mixerHost enableMixerInput: 0 isOn: true];
+    [self.mixerHost enableMixerInput: 1 isOn: true];
+    
+    [self.mixerHost setMixerOutputGain: 1.0f];
+    [self.mixerHost setMixerInput: 0 gain: 1.0f];
+    [self.mixerHost setMixerInput: 1 gain: 1.0f];
+}
+
 - (void) initialisePlayers
 {
 
@@ -107,8 +134,16 @@
     NSArray *nameArray = nil;
     NSString *songParsed = nil;
     NSString *archiveOrgUrl = nil;
-    MixPlayer *newMixPlayer = nil;
+    //MixPlayer *newMixPlayer = nil;
     NSString *currentSong = nil;
+    
+    MixerHostAudio *newAudioObject = [[MixerHostAudio alloc] init];
+    self.mixerHost = newAudioObject;
+    
+    [self registerForAudioObjectNotifications];
+    [self initializeMixerSettingsToUI];
+    
+    
     int numSongs = [songNames count];
     
     for (int i = 0; i < 2; i++) {
@@ -126,7 +161,9 @@
         
         
         NSLog(@">>>> init player for: %@", archiveOrgUrl);
-        newMixPlayer = [[MixPlayer alloc] init];
+        //newMixPlayer = [[MixPlayer alloc] init];
+        
+
         
 
         NSDictionary *songItemInfo = [[NSDictionary alloc] initWithDictionary:[self.songsDB objectForKey:currentSong]];
@@ -160,14 +197,14 @@
         }
     
         
-        [newMixPlayer setSongURL:archiveOrgUrl];
+        //[newMixPlayer setSongURL:archiveOrgUrl];
         float songBpm = [(NSNumber *)[songInfo objectForKey:@"bpm"] floatValue];
-        [newMixPlayer setOriginalRate:songBpm];
-        [newMixPlayer setRate:1];
+        //[newMixPlayer setOriginalRate:songBpm];
+        //[newMixPlayer setRate:1];
         NSLog(@" setting song beat stamps: %@", onsets);
-        [newMixPlayer setSongBeatStamps: onsets];
-        [newMixPlayer setSongBeatClasses: beatClasses];
-        
+        //[newMixPlayer setSongBeatStamps: onsets];
+        //[newMixPlayer setSongBeatClasses: beatClasses];
+        /*
         if (i == 0) {
             self.track0 = newMixPlayer;
         } else if( i == 1){
@@ -175,12 +212,14 @@
         } else if (i == 2) {
             self.track2 = newMixPlayer;
         }
+         */
     }
 
 }
 
 - (MixPlayer *) getMixPlayer: (int)mixNumber
 {
+    /*
     NSLog(@">>>> get player : %d", mixNumber);
     switch (mixNumber) {
         case 0:
@@ -195,6 +234,7 @@
         default:
             break;
     }
+    */
     return nil;
 }
 
@@ -228,6 +268,7 @@
         return;
     
     self.currentSong = songIndex;
+    /*
     
     MixPlayer *mixPlayer = [self getMixPlayer: self.currentSong];
     
@@ -248,7 +289,7 @@
         NSLog(@"unloop: %@", command);
         [mixPlayer unloop];
     }
-    
+    */
     NSLog(@"performCommand: %@", command);
 }
 
@@ -256,13 +297,14 @@
 - (void) volumeTrack0: (float) volumeValue
 {
     self.volumeTrack0 = volumeValue;
-    [self.track0 setVolume:self.volumeTrack0];
+    
+    //[self.track0 setVolume:self.volumeTrack0];
 }
 
 - (void) volumeTrack1: (float) volumeValue
 {
     self.volumeTrack1 = volumeValue;
-    [self.track1 setVolume:self.volumeTrack1];
+    //[self.track1 setVolume:self.volumeTrack1];
 }
 
 - (void) pushBeatClassesUIArray: (NSMutableArray *) currentClasses
@@ -305,11 +347,10 @@
     NSLog(@"songInfo: %@", songDict);
     float masterTempo = [(NSNumber *)[songDict valueForKey:@"bpm"] floatValue];
     float indexTempo = masterTempo;
-    
-
     int index = 0;
-    MixPlayer *targetTrack = nil;
     
+    //MixPlayer *targetTrack = nil;
+    /*
     NSLog(@"mastertempo %f", masterTempo);
 
     //adjust rate of master track
@@ -329,6 +370,7 @@
         }
         index++;
     }
+     */
 }
 
 

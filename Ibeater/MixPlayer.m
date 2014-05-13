@@ -8,7 +8,6 @@
 
 #import "MixPlayer.h"
 #import "IBeaterAppDelegate.h"
-#import "SCUI.h"
 
 
 @interface MixPlayer()

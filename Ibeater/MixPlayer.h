@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "SCUI.h"
 #import "WeMixBrain.h"
 #import "AudioStreamer.h"
 
